@@ -61,7 +61,7 @@ const CartPage = () => {
     if (cart.length === 0) return;
     deductStock(cart);
     const orderId = await submitOrder()
-navigate(`/order-success/${orderId}`)
+navigate(`/order/${orderId}`)
   };
 
   const handleEdit = (item: CartItem) => {
