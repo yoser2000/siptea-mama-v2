@@ -57,11 +57,11 @@ const CartPage = () => {
   const { deductStock } = useStock();
   const navigate = useNavigate();
 
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
     if (cart.length === 0) return;
     deductStock(cart);
-    const orderId = submitOrder();
-    navigate(`/order/${orderId}`);
+    const orderId = await submitOrder()
+navigate(`/order-success/${orderId}`)
   };
 
   const handleEdit = (item: CartItem) => {
